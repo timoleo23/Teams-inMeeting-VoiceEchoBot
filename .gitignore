@@ -1,0 +1,10 @@
+node_modules
+/.fx/*.env
+.DS_Store
+/.fx/configs/localSettings.json
+/manifest/dist
+
+#dev artifacts
+subscriptionInfo.json
+.env.development.local.bkp
+*Backup.json

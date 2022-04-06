@@ -1,0 +1,83 @@
+{
+  "$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.11/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.11",
+  "version": "1.0.0",
+  "id": "{appid}",
+  "packageName": "com.microsoft.teams.VoiceEchoBot",
+  "developer": {
+    "name": "Teams App, Inc.",
+    "websiteUrl": "{baseUrl}/tab",
+    "privacyUrl": "{baseUrl}/privacy",
+    "termsOfUseUrl": "{baseUrl}/termsofuse"
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "name": {
+    "short": "Teams Voice EchoBot",
+    "full": "Teams Voice EchoBot"
+  },
+  "description": {
+    "short": "This bot will echo what you say in a meeting",
+    "full": "This bot will echo what you say in a meeting"
+  },
+  "accentColor": "#004578",
+  "configurableTabs": [
+    {
+      "configurationUrl": "{baseUrl}/config",
+      "canUpdateConfiguration": false,
+      "scopes": [
+        "groupchat"
+      ],
+      "context": [
+        "meetingChatTab",
+        "meetingDetailsTab",
+        "meetingSidePanel"
+      ]
+    }
+  ],
+  "bots": [
+    {
+      "botId": "{appid}",
+      "supportsCalling": true,
+      "supportsVideo": true,      
+      "scopes": [
+        "personal",
+        "groupchat"
+      ],
+      "commandLists": [
+        {
+          "commands": [
+            {
+              "title": "Hello",
+              "description": "Say hello"
+            }
+          ],
+          "scopes": [
+            "groupchat"
+          ]
+        }
+      ],      
+      "supportsFiles": false,
+      "isNotificationOnly": false
+    }
+  ],
+  "permissions": [
+    "identity",
+    "messageTeamMembers"
+  ],
+  "validDomains": [
+    "{baseUrlDomain}",
+    "{VOICE_ECHO_BOT_URL}",
+    "*.ngrok.io",
+    "graph.microsoft.com"
+  ],
+  "webApplicationInfo": {
+    "id": "{appid}",
+    "resource": "{applicationIDURI}",
+    "applicationPermissions": [
+      "OnlineMeeting.ReadBasic.Chat"
+    ]
+  }
+}
